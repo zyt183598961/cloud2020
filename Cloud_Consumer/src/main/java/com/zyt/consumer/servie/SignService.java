@@ -1,6 +1,6 @@
 package com.zyt.consumer.servie;
 
-import com.zyt.common.dto.SignDto;
+import com.zyt.common.dto.SignDTO;
 import com.zyt.common.vo.R;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +13,7 @@ public interface SignService {
 
     //签到
     @PostMapping("/save")
-    R save(@RequestBody SignDto signDto);
+    R save(@RequestBody SignDTO signDto);
 
     //方法要合provider里的一样
     @GetMapping("/getAll")

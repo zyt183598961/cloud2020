@@ -1,7 +1,7 @@
 package com.zyt.cloud.provider.controller;
 
 import com.zyt.cloud.provider.service.ISignService;
-import com.zyt.common.dto.SignDto;
+import com.zyt.common.dto.SignDTO;
 import com.zyt.common.vo.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +14,7 @@ public class SignController {
 
 
     @PostMapping("/save")
-    public R save(@RequestBody SignDto signDto) {
+    public R save(@RequestBody SignDTO signDto) {
         return signService.save(signDto);
     }
 

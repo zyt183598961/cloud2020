@@ -1,6 +1,6 @@
 package com.zyt.consumer.controller;
 
-import com.zyt.common.dto.SignDto;
+import com.zyt.common.dto.SignDTO;
 import com.zyt.common.vo.R;
 import com.zyt.consumer.servie.SignService;
 import io.swagger.annotations.Api;
@@ -18,7 +18,7 @@ public class SignController {
     //添加
     @ApiOperation(value = "签到", notes = "签到")
     @PostMapping("/save")
-    public R save(@RequestBody SignDto signDto){
+    public R save(@RequestBody SignDTO signDto){
         return signService.save(signDto);
     }
 

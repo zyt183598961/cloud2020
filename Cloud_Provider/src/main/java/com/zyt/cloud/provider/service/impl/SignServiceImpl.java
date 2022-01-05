@@ -2,7 +2,7 @@ package com.zyt.cloud.provider.service.impl;
 
 import com.zyt.cloud.provider.dao.SignDao;
 import com.zyt.cloud.provider.service.ISignService;
-import com.zyt.common.dto.SignDto;
+import com.zyt.common.dto.SignDTO;
 import com.zyt.common.entity.StudentSign;
 import com.zyt.common.vo.R;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class SignServiceImpl implements ISignService {
     private SignDao signDao;
 
     @Override
-    public R save(SignDto signDto) {
+    public R save(SignDTO signDto) {
         StudentSign studentSign = new StudentSign();
         studentSign.setName(signDto.getName());
         studentSign.setClsname(signDto.getClaname());
