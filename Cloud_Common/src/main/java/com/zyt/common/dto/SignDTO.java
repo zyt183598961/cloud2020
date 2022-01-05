@@ -4,7 +4,7 @@ import lombok.Data;
 
 
 @Data
-public class SignDto {
+public class SignDTO {
 
     private String name;
     private String claname;
