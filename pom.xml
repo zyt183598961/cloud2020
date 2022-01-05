@@ -10,6 +10,7 @@
         <module>Cloud_Server</module>
         <module>Cloud_Server</module>
         <module>Cloud_Dependencies</module>
+        <module>Cloud_Zuul</module>
     </modules>
 
     <parent>
