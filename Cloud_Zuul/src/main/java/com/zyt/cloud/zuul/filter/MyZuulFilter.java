@@ -1,5 +1,6 @@
 package com.zyt.cloud.zuul.filter;
 
+import com.alibaba.fastjson.JSON;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
@@ -61,7 +62,7 @@ public class MyZuulFilter extends ZuulFilter {
             HttpServletResponse resp = requestContext.getResponse();
             resp.setContentType("application/json;charset=UTF-8");
             try {
-                resp.getWriter().println(R.fail("缺少必带参数"));
+                resp.getWriter().println(JSON.toJSONString(R.fail("缺少必带参数")));
             } catch (IOException e) {
                 e.printStackTrace();
             }
