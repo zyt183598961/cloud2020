@@ -43,13 +43,13 @@ public class MyZuulFilter extends ZuulFilter {
      */
     @Override
     public boolean shouldFilter() {
-        return true;
+        return false;
     }
 
     /**
      * 过滤处理
      *
-     * @return
+     * @return null
      * @throws ZuulException
      */
     @Override
