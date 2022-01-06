@@ -11,6 +11,7 @@
         <module>Cloud_Server</module>
         <module>Cloud_Dependencies</module>
         <module>Cloud_Zuul</module>
+        <module>Cloud_Hystrix</module>
     </modules>
 
     <parent>
