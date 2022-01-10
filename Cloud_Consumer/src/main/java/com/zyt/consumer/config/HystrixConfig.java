@@ -12,7 +12,9 @@ public class HystrixConfig {
     /**
      * 服务配置的实时数据采集  默认servlet
      * @return  ServletRegistrationBean对象
+     * Hystrix访问地址 http://IP:PORT/hystrix.stream
      */
+
     @Bean
     public ServletRegistrationBean create() {
         ServletRegistrationBean registrationBean = new ServletRegistrationBean();
