@@ -6,11 +6,14 @@ import java.util.Date;
 
 
 public class DateUtil {
+
+    private static final SimpleDateFormat simDf = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
+
     //获取今天的日期
     public static String getDate(){
-        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
-        return sdf.format(new Date());
+        return simDf.format(new Date());
     }
+
     //查询今日剩下的秒数
     public static int getSeconds(){
         SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -21,6 +24,10 @@ public class DateUtil {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(DateUtil.getDate());
     }
 
 }
