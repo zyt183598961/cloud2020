@@ -2,7 +2,10 @@ package com.zyt.common.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 
 public class DateUtil {
@@ -13,6 +16,7 @@ public class DateUtil {
     public static String getDate(){
         return simDf.format(new Date());
     }
+
 
     //查询今日剩下的秒数
     public static int getSeconds(){
