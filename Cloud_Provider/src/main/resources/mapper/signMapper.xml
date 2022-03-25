@@ -6,27 +6,34 @@
 
 <mapper namespace="com.zyt.cloud.provider.dao.SignDao">
     <resultMap id="signMap" type="com.zyt.common.entity.StudentSign">
-        <result property="id" column="USER_ID"/>
+        <result property="userid" column="userid"/>
         <result property="name" column="name"/>
         <result property="clsname" column="clsname"/>
         <result property="stime" column="stime"/>
         <result property="type" column="type"/>
     </resultMap>
 
-   <!-- <select id="getUser"  resultMap="userMap">
-        select * from t_users;
-    </select>-->
+    <!-- <select id="getUser"  resultMap="userMap">
+         select * from t_users;
+     </select>-->
 
     <insert id="save" parameterType="com.zyt.common.entity.StudentSign">
-        insert into t_sign (name,clsname,stime,type) values (#{name},#{clsname},#{stime},#{type})
+        insert into t_sign (userid, name, clsname, stime, type)
+        values (#{userid}, #{name}, #{clsname}, #{stime}, #{type})
     </insert>
 
     <select id="getAll" resultMap="signMap">
-        select  * from t_sign;
+        select *
+        from t_sign;
     </select>
 
     <select id="getByName" parameterType="string" resultMap="signMap">
-        select * from t_sign where name = #{name}
+        select *
+        from t_sign
+        where
+        <if test="name != null">
+            name  = #{name}
+        </if>
     </select>
 
 

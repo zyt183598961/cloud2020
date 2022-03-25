@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class StudentSign {
 
-    private Integer id;
+    private String userid;
 
     private String name;
 
