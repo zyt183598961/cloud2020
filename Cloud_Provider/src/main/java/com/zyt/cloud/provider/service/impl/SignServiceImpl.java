@@ -2,8 +2,10 @@ package com.zyt.cloud.provider.service.impl;
 
 import com.zyt.cloud.provider.dao.SignDao;
 import com.zyt.cloud.provider.service.ISignService;
+import com.zyt.cloud.provider.util.UUIDUtils;
 import com.zyt.common.dto.SignDTO;
 import com.zyt.common.entity.StudentSign;
+import com.zyt.common.util.DateUtil;
 import com.zyt.common.vo.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,7 @@ import sun.text.resources.FormatData;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 @Service
 public class SignServiceImpl implements ISignService {
@@ -21,13 +24,14 @@ public class SignServiceImpl implements ISignService {
     @Override
     public R save(SignDTO signDto) {
         StudentSign studentSign = new StudentSign();
+        studentSign.setUserid(UUIDUtils.getUserId());
         studentSign.setName(signDto.getName());
         studentSign.setClsname(signDto.getClaname());
         studentSign.setType("课前签到");
-        Date date = new Date();
+        /*Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-        String time = simpleDateFormat.format(date);
-        studentSign.setStime(time);
+        String time = simpleDateFormat.format(date);*/
+        studentSign.setStime(DateUtil.getDate());
         int i = signDao.save(studentSign);
         if (i > 0){
             return R.ok();
@@ -36,6 +40,7 @@ public class SignServiceImpl implements ISignService {
         }
 
     }
+
 
     @Override
     public R getAll() {
